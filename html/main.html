@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/script.js" defer></script>
+<title>Para Kotku</title>
+<body>
+
+<div class="metro-bg">
+    <svg viewBox="0 0 800 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <!-- metro lines -->
+      <path d="M40 620 L260 620 L460 420 L460 180" stroke="#1D9E75" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M120 800 L120 460 L320 260 L640 260" stroke="#D85A30" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M60 220 L300 220 L520 440 L520 740 L700 740" stroke="#378ADD" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M740 80 L500 280 L500 560 L260 560 L100 760" stroke="#BA7517" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M760 500 L580 500 L380 700 L160 700" stroke="#993556" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M740 200 L560 200 L360 400 L360 640" stroke="#534AB7" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M180 760 L260 620 L380 580" stroke="#0F6E56" stroke-width="6" fill="none" stroke-linecap="round"/>
+   
+      <!-- title, like a map legend -->
+      <text x="400" y="46" text-anchor="middle" class="metro-title">PLANO DE MADRID</text>
+   
+      <!-- stations -->
+      <circle cx="260" cy="620" r="9" fill="#FFFDF8" stroke="#1D9E75" stroke-width="4"/>
+      <text x="260" y="645" text-anchor="middle">Atocha</text>
+   
+      <circle cx="460" cy="420" r="11" fill="#FFFDF8" stroke="#2C2C2A" stroke-width="4"/>
+      <text x="480" y="412" text-anchor="start">Sol</text>
+   
+      <circle cx="320" cy="260" r="9" fill="#FFFDF8" stroke="#D85A30" stroke-width="4"/>
+      <text x="320" y="240" text-anchor="middle">Chamberí</text>
+   
+      <circle cx="520" cy="440" r="9" fill="#FFFDF8" stroke="#378ADD" stroke-width="4"/>
+      <text x="542" y="448" text-anchor="start">Gran Vía</text>
+   
+      <circle cx="300" cy="220" r="9" fill="#FFFDF8" stroke="#378ADD" stroke-width="4"/>
+      <text x="300" y="200" text-anchor="middle">Bilbao</text>
+   
+      <circle cx="500" cy="280" r="9" fill="#FFFDF8" stroke="#BA7517" stroke-width="4"/>
+      <text x="522" y="288" text-anchor="start">Alonso Martínez</text>
+   
+      <circle cx="260" cy="560" r="9" fill="#FFFDF8" stroke="#BA7517" stroke-width="4"/>
+      <text x="238" y="568" text-anchor="end">Lavapiés</text>
+   
+      <circle cx="580" cy="500" r="9" fill="#FFFDF8" stroke="#993556" stroke-width="4"/>
+      <text x="602" y="508" text-anchor="start">Retiro</text>
+   
+      <circle cx="380" cy="700" r="9" fill="#FFFDF8" stroke="#993556" stroke-width="4"/>
+      <text x="380" y="724" text-anchor="middle">Embajadores</text>
+   
+      <circle cx="560" cy="200" r="9" fill="#FFFDF8" stroke="#534AB7" stroke-width="4"/>
+      <text x="560" y="180" text-anchor="middle">Chueca</text>
+   
+      <circle cx="360" cy="400" r="9" fill="#FFFDF8" stroke="#534AB7" stroke-width="4"/>
+      <text x="338" y="392" text-anchor="end">Callao</text>
+   
+      <circle cx="120" cy="460" r="9" fill="#FFFDF8" stroke="#D85A30" stroke-width="4"/>
+      <text x="98" y="468" text-anchor="end">Moncloa</text>
+   
+      <circle cx="640" cy="260" r="9" fill="#FFFDF8" stroke="#D85A30" stroke-width="4"/>
+      <text x="662" y="268" text-anchor="start">Goya</text>
+   
+      <circle cx="700" cy="740" r="9" fill="#FFFDF8" stroke="#378ADD" stroke-width="4"/>
+      <text x="700" y="764" text-anchor="middle">Delicias</text>
+   
+      <!-- landmark: Puerta de Alcalá, simplified arch -->
+      <g transform="translate(610,420)">
+        <rect x="-22" y="0" width="9" height="40" fill="#B98654"/>
+        <rect x="13" y="0" width="9" height="40" fill="#B98654"/>
+        <path d="M-22 0 C-22 -22 22 -22 22 0 Z" fill="#B98654"/>
+        <rect x="-30" y="38" width="60" height="6" fill="#9A7148"/>
+        <text x="0" y="62" text-anchor="middle">Puerta de Alcalá</text>
+      </g>
+   
+      <!-- landmark: oso y el madroño, simplified -->
+      <g transform="translate(440,500)">
+        <ellipse cx="0" cy="10" rx="16" ry="11" fill="#B98654"/>
+        <circle cx="-4" cy="-6" r="9" fill="#B98654"/>
+        <circle cx="-12" cy="-13" r="3.2" fill="#B98654"/>
+        <circle cx="3" cy="-13" r="3.2" fill="#B98654"/>
+        <path d="M14 6 C24 0 26 -14 18 -20" stroke="#7C9A6E" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="19" cy="-22" r="4" fill="#C76B4A"/>
+        <circle cx="24" cy="-16" r="3.4" fill="#C76B4A"/>
+        <text x="0" y="34" text-anchor="middle">El Oso y el Madroño</text>
+      </g>
+   
+      <!-- landmark: small fountain dot for Cibeles -->
+      <g transform="translate(560,360)">
+        <circle r="10" fill="none" stroke="#B98654" stroke-width="2.5"/>
+        <circle r="3.5" fill="#B98654"/>
+        <text x="0" y="-16" text-anchor="middle">Cibeles</text>
+      </g>
+    </svg>
+  </div>
+  <div class="grain"></div>
+   
+  <div class="stage">
+   
+    <!-- ============ COUNTDOWN GATE ============ -->
+    <div class="countdown-gate" id="countdownGate">
+      <svg class="countdown-flowers" viewBox="0 0 130 110" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="cdPetal1" cx="35%" cy="30%" r="75%">
+            <stop offset="0%" stop-color="#F8E2CE"/>
+            <stop offset="100%" stop-color="#EBB888"/>
+          </radialGradient>
+          <radialGradient id="cdPetal2" cx="35%" cy="30%" r="75%">
+            <stop offset="0%" stop-color="#E8A0B4"/>
+            <stop offset="100%" stop-color="#C45F73"/>
+          </radialGradient>
+          <radialGradient id="cdPetal3" cx="35%" cy="30%" r="75%">
+            <stop offset="0%" stop-color="#F2D2DE"/>
+            <stop offset="100%" stop-color="#D88AA3"/>
+          </radialGradient>
+        </defs>
+        <path d="M44 108 C42 86 47 73 49 60" stroke="#7C9A6E" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M66 108 C66 82 64 69 66 54" stroke="#6B8C5F" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M88 108 C90 86 84 73 80 60" stroke="#7C9A6E" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M49 80 C39 76 35 83 34 89 C43 90 49 86 49 80 Z" fill="#8FAE7E"/>
+        <path d="M82 76 C92 73 96 79 97 85 C88 86 82 82 82 76 Z" fill="#8FAE7E"/>
+        <g transform="translate(49,55)">
+          <circle r="13" fill="url(#cdPetal1)"/>
+          <path d="M0 -12 C6 -10 9 -5 8 1 C3 -2 -2 -4 0 -12 Z" fill="#F0C9A8"/>
+          <path d="M0 -12 C-6 -10 -9 -5 -8 1 C-3 -2 2 -4 0 -12 Z" fill="#F0C9A8"/>
+          <circle r="6" fill="#D98C56"/>
+        </g>
+        <g transform="translate(66,44)">
+          <circle r="18" fill="url(#cdPetal2)"/>
+          <path d="M0 -17 C8 -14 12 -7 10 1 C4 -3 -3 -6 0 -17 Z" fill="#DD8595"/>
+          <path d="M0 -17 C-8 -14 -12 -7 -10 1 C-4 -3 3 -6 0 -17 Z" fill="#DD8595"/>
+          <circle r="8" fill="#C45F73"/>
+        </g>
+        <g transform="translate(82,60)">
+          <circle r="11" fill="url(#cdPetal3)"/>
+          <path d="M0 -10 C5 -8 8 -4 6 1 C2 -2 -2 -3 0 -10 Z" fill="#EAC8D6"/>
+          <path d="M0 -10 C-5 -8 -8 -4 -6 1 C-2 -2 2 -3 0 -10 Z" fill="#EAC8D6"/>
+          <circle r="5" fill="#C76B4A"/>
+        </g>
+      </svg>
+   
+      <p class="countdown-eyebrow" data-i18n="countdownEyebrow">cuenta atrás</p>
+      <p class="countdown-title" data-i18n="countdownTitle">Algo se está preparando para ti</p>
+   
+      <div class="countdown-grid" id="countdownGrid">
+        <div class="countdown-unit">
+          <div class="countdown-number" id="cdDays">00</div>
+          <div class="countdown-unit-label" data-i18n="cdDaysLabel">días</div>
+        </div>
+        <div class="countdown-unit">
+          <div class="countdown-number" id="cdHours">00</div>
+          <div class="countdown-unit-label" data-i18n="cdHoursLabel">horas</div>
+        </div>
+        <div class="countdown-unit">
+          <div class="countdown-number" id="cdMinutes">00</div>
+          <div class="countdown-unit-label" data-i18n="cdMinutesLabel">min</div>
+        </div>
+        <div class="countdown-unit">
+          <div class="countdown-number" id="cdSeconds">00</div>
+          <div class="countdown-unit-label" data-i18n="cdSecondsLabel">seg</div>
+        </div>
+      </div>
+   
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="langEsGate" type="button">ES</button>
+        <button class="lang-btn" id="langPlGate" type="button">PL</button>
+      </div>
+    </div>
+   
+    <!-- ============ QUIZ ============ -->
+    <div class="quiz hidden" id="quiz">
+      <svg class="quiz-flowers" viewBox="0 0 130 110" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="qPetal1" cx="35%" cy="30%" r="75%">
+            <stop offset="0%" stop-color="#F8E2CE"/>
+            <stop offset="100%" stop-color="#EBB888"/>
+          </radialGradient>
+          <radialGradient id="qPetal2" cx="35%" cy="30%" r="75%">
+            <stop offset="0%" stop-color="#E8A0B4"/>
+            <stop offset="100%" stop-color="#C45F73"/>
+          </radialGradient>
+          <radialGradient id="qPetal3" cx="35%" cy="30%" r="75%">
+            <stop offset="0%" stop-color="#F2D2DE"/>
+            <stop offset="100%" stop-color="#D88AA3"/>
+          </radialGradient>
+        </defs>
+        <path d="M44 108 C42 86 47 73 49 60" stroke="#7C9A6E" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M66 108 C66 82 64 69 66 54" stroke="#6B8C5F" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M88 108 C90 86 84 73 80 60" stroke="#7C9A6E" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M49 80 C39 76 35 83 34 89 C43 90 49 86 49 80 Z" fill="#8FAE7E"/>
+        <path d="M82 76 C92 73 96 79 97 85 C88 86 82 82 82 76 Z" fill="#8FAE7E"/>
+   
+        <g transform="translate(49,55)">
+          <circle r="13" fill="url(#qPetal1)"/>
+          <path d="M0 -12 C6 -10 9 -5 8 1 C3 -2 -2 -4 0 -12 Z" fill="#F0C9A8"/>
+          <path d="M0 -12 C-6 -10 -9 -5 -8 1 C-3 -2 2 -4 0 -12 Z" fill="#F0C9A8"/>
+          <circle r="6" fill="#D98C56"/>
+        </g>
+        <g transform="translate(66,44)">
+          <circle r="18" fill="url(#qPetal2)"/>
+          <path d="M0 -17 C8 -14 12 -7 10 1 C4 -3 -3 -6 0 -17 Z" fill="#DD8595"/>
+          <path d="M0 -17 C-8 -14 -12 -7 -10 1 C-4 -3 3 -6 0 -17 Z" fill="#DD8595"/>
+          <circle r="8" fill="#C45F73"/>
+        </g>
+        <g transform="translate(82,60)">
+          <circle r="11" fill="url(#qPetal3)"/>
+          <path d="M0 -10 C5 -8 8 -4 6 1 C2 -2 -2 -3 0 -10 Z" fill="#EAC8D6"/>
+          <path d="M0 -10 C-5 -8 -8 -4 -6 1 C-2 -2 2 -3 0 -10 Z" fill="#EAC8D6"/>
+          <circle r="5" fill="#C76B4A"/>
+        </g>
+      </svg>
+   
+      <p class="quiz-question" data-i18n="quizQuestion">¿Eres muy guapa?</p>
+      <p class="quiz-sub" data-i18n="quizSub">pequeño cuestionario obligatorio antes de continuar</p>
+   
+      <div class="quiz-buttons" id="quizButtons">
+        <button class="quiz-btn btn-yes" id="btnYes" data-i18n="yes">Sí</button>
+        <button class="quiz-btn btn-no" id="btnNo" data-i18n="no">No</button>
+      </div>
+   
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="langEsQuiz" type="button">ES</button>
+        <button class="lang-btn" id="langPlQuiz" type="button">PL</button>
+      </div>
+    </div>
+   
+    <!-- ============ ENVELOPE + CARD ============ -->
+    <div class="envelope-screen hidden" id="envelopeScreen">
+      <p class="hint" id="hint" data-i18n="hint">toca el sobre</p>
+   
+      <div class="envelope-wrap" id="envelope">
+        <span class="stamp" data-i18n="stamp">cumple</span>
+   
+        <svg class="postmark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="46" fill="none" stroke="#5B4632" stroke-width="2"/>
+          <circle cx="50" cy="50" r="38" fill="none" stroke="#5B4632" stroke-width="1.2"/>
+          <path id="postmarkArcTop" d="M 16 50 A 34 34 0 0 1 84 50" fill="none"/>
+          <path id="postmarkArcBottom" d="M 84 58 A 34 34 0 0 1 16 58" fill="none"/>
+          <text font-size="13" font-weight="700" fill="#5B4632" letter-spacing="1.5">
+            <textPath href="#postmarkArcTop" startOffset="50%" text-anchor="middle">MADRID</textPath>
+          </text>
+          <text font-size="9" font-weight="600" fill="#5B4632" letter-spacing="1">
+            <textPath href="#postmarkArcBottom" startOffset="50%" text-anchor="middle">CORREOS</textPath>
+          </text>
+          <path d="M30 50 L70 50 M50 38 L50 30 M38 60 L34 66 M62 60 L66 66" stroke="#5B4632" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+   
+        <svg class="envelope-svg" viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="60" width="440" height="230" rx="10" fill="#E7B98C"/>
+          <polygon points="20,70 240,180 20,290" fill="#DCAB78"/>
+          <polygon points="460,70 240,180 460,290" fill="#DCAB78"/>
+          <polygon points="20,70 240,185 460,70 460,90 240,200 20,90" fill="#C99563" opacity="0.5"/>
+   
+          <g transform="translate(70,250)">
+            <path d="M0 38 C-1 22 2 14 3 6" stroke="#7C9A6E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <circle cx="3" cy="0" r="7" fill="#F0C9A8"/>
+            <circle cx="3" cy="0" r="4" fill="#D98C56"/>
+          </g>
+          <g transform="translate(395,255)">
+            <path d="M0 33 C1 18 -2 11 -3 4" stroke="#6B8C5F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <circle cx="-3" cy="0" r="8" fill="#E3B7C9"/>
+            <circle cx="-3" cy="0" r="4.5" fill="#C76B4A"/>
+          </g>
+          <g transform="translate(430,260)">
+            <path d="M0 28 C-1 16 1 10 2 4" stroke="#7C9A6E" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <circle cx="2" cy="0" r="5.5" fill="#D9778C"/>
+          </g>
+        </svg>
+   
+        <div class="letter-peek"></div>
+   
+        <svg class="envelope-svg" style="position:absolute; top:0; left:0;" viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg">
+          <g class="flap-front" style="transform-style: preserve-3d;">
+            <polygon points="20,60 240,180 460,60" fill="#F2C49B" stroke="#DCAB78" stroke-width="1.5"/>
+          </g>
+          <g class="seal">
+            <circle cx="240" cy="168" r="24" fill="#C76B4A"/>
+            <g transform="translate(240,168)">
+              <circle r="9" fill="#F0C9A8"/>
+              <circle cx="-7" cy="-4" r="6.5" fill="#EAC8D6"/>
+              <circle cx="7" cy="-4" r="6.5" fill="#EAC8D6"/>
+              <circle cx="-7" cy="5" r="6.5" fill="#EAC8D6"/>
+              <circle cx="7" cy="5" r="6.5" fill="#EAC8D6"/>
+              <circle r="4.5" fill="#FBEDE3"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+   
+      <div class="card" id="card">
+        <!-- realistic tied bouquet: gradients for petal depth, layered shapes -->
+        <svg class="card-flowers" viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="peonyCenterG" cx="40%" cy="35%" r="70%">
+              <stop offset="0%" stop-color="#F6DABB"/>
+              <stop offset="100%" stop-color="#D8945F"/>
+            </radialGradient>
+            <linearGradient id="peonyPetalG1" x1="20%" y1="0%" x2="80%" y2="100%">
+              <stop offset="0%" stop-color="#F7DDBE"/>
+              <stop offset="100%" stop-color="#E3AC78"/>
+            </linearGradient>
+            <linearGradient id="peonyPetalG2" x1="20%" y1="0%" x2="80%" y2="100%">
+              <stop offset="0%" stop-color="#F1C99A"/>
+              <stop offset="100%" stop-color="#D89760"/>
+            </linearGradient>
+   
+            <radialGradient id="ranunCenterG" cx="40%" cy="35%" r="70%">
+              <stop offset="0%" stop-color="#EFA8B7"/>
+              <stop offset="100%" stop-color="#AE4E62"/>
+            </radialGradient>
+            <linearGradient id="ranunPetalG1" x1="20%" y1="0%" x2="80%" y2="100%">
+              <stop offset="0%" stop-color="#EFAFBD"/>
+              <stop offset="100%" stop-color="#CD6E80"/>
+            </linearGradient>
+            <linearGradient id="ranunPetalG2" x1="20%" y1="0%" x2="80%" y2="100%">
+              <stop offset="0%" stop-color="#E68FA2"/>
+              <stop offset="100%" stop-color="#BD5C70"/>
+            </linearGradient>
+   
+            <radialGradient id="roseCenterG" cx="40%" cy="35%" r="70%">
+              <stop offset="0%" stop-color="#F4D8E3"/>
+              <stop offset="100%" stop-color="#CB91AB"/>
+            </radialGradient>
+            <linearGradient id="rosePetalG1" x1="20%" y1="0%" x2="80%" y2="100%">
+              <stop offset="0%" stop-color="#F2D9E2"/>
+              <stop offset="100%" stop-color="#DCAEC1"/>
+            </linearGradient>
+            <linearGradient id="rosePetalG2" x1="20%" y1="0%" x2="80%" y2="100%">
+              <stop offset="0%" stop-color="#EAC0D2"/>
+              <stop offset="100%" stop-color="#D29DB4"/>
+            </linearGradient>
+   
+            <linearGradient id="leafG" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#9DBE8A"/>
+              <stop offset="100%" stop-color="#74986A"/>
+            </linearGradient>
+   
+            <!-- reusable single-petal shapes, slightly teardrop/organic, not perfect -->
+            <path id="petalLg" d="M0,0 C9,-6 13,-22 6,-40 C2,-46 -2,-46 -6,-40 C-13,-22 -9,-6 0,0 Z"/>
+            <path id="petalMd" d="M0,0 C7,-5 10,-17 5,-30 C2,-35 -2,-35 -5,-30 C-10,-17 -7,-5 0,0 Z"/>
+            <path id="petalSm" d="M0,0 C5,-4 8,-13 4,-22 C1.5,-26 -1.5,-26 -4,-22 C-8,-13 -5,-4 0,0 Z"/>
+          </defs>
+   
+          <!-- stems gathered toward one point (bouquet base) -->
+          <path d="M190 290 L150 175" stroke="#6B8C5F" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M190 290 L172 168" stroke="#7C9A6E" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M190 290 L190 160" stroke="#6B8C5F" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M190 290 L208 168" stroke="#7C9A6E" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M190 290 L230 175" stroke="#6B8C5F" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M190 290 L130 190" stroke="#8FAE7E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M190 290 L250 192" stroke="#8FAE7E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+   
+          <!-- ribbon tied around the stems -->
+          <path d="M156 246 C156 236 224 236 224 246 C224 256 156 256 156 246 Z" fill="#C76B4A"/>
+          <path d="M156 246 L142 268 L160 262 Z" fill="#B85B3B"/>
+          <path d="M224 246 L238 268 L220 262 Z" fill="#B85B3B"/>
+   
+          <!-- leaves, naturalistic shape with gradient -->
+          <path d="M150 195 C128 188 116 200 112 216 C134 220 150 210 150 195 Z" fill="url(#leafG)"/>
+          <path d="M230 198 C252 191 264 203 268 219 C246 223 230 213 230 198 Z" fill="url(#leafG)"/>
+          <path d="M130 205 C112 202 104 212 102 224 C118 226 130 218 130 205 Z" fill="#A4C18F"/>
+          <path d="M250 207 C268 204 276 214 278 226 C262 228 250 220 250 207 Z" fill="#A4C18F"/>
+          <path d="M150 195 L130 218" stroke="#6B8C5F" stroke-width="1" fill="none" opacity="0.4"/>
+          <path d="M230 198 L252 220" stroke="#6B8C5F" stroke-width="1" fill="none" opacity="0.4"/>
+   
+          <!-- bloom 1: peony, left — many overlapping petals at slightly uneven angles -->
+          <g transform="translate(150,148)">
+          <g class="bloom-pop" style="animation-delay: 0.15s">
+            <!-- back layer: wider petal ring, slightly irregular rotation/scale -->
+            <use href="#petalLg" fill="url(#peonyPetalG1)" transform="rotate(-12) scale(0.95)"/>
+            <use href="#petalLg" fill="url(#peonyPetalG1)" transform="rotate(48) scale(1.05)"/>
+            <use href="#petalLg" fill="url(#peonyPetalG2)" transform="rotate(108) scale(0.92)"/>
+            <use href="#petalLg" fill="url(#peonyPetalG1)" transform="rotate(167) scale(1)"/>
+            <use href="#petalLg" fill="url(#peonyPetalG2)" transform="rotate(226) scale(0.97)"/>
+            <use href="#petalLg" fill="url(#peonyPetalG1)" transform="rotate(287) scale(1.03)"/>
+            <!-- shading where petals overlap -->
+            <path d="M0 -2 C8 -10 9 -22 4 -30 C2 -22 -1 -10 0 -2 Z" fill="#C97F4D" opacity="0.18" transform="rotate(18)"/>
+            <path d="M0 -2 C8 -10 9 -22 4 -30 C2 -22 -1 -10 0 -2 Z" fill="#C97F4D" opacity="0.18" transform="rotate(138)"/>
+            <path d="M0 -2 C8 -10 9 -22 4 -30 C2 -22 -1 -10 0 -2 Z" fill="#C97F4D" opacity="0.18" transform="rotate(258)"/>
+            <!-- inner layer, smaller petals, tighter ring -->
+            <use href="#petalMd" fill="url(#peonyPetalG2)" transform="rotate(10) scale(0.9)"/>
+            <use href="#petalMd" fill="url(#peonyPetalG1)" transform="rotate(78) scale(0.96)"/>
+            <use href="#petalMd" fill="url(#peonyPetalG2)" transform="rotate(148) scale(0.88)"/>
+            <use href="#petalMd" fill="url(#peonyPetalG1)" transform="rotate(213) scale(0.94)"/>
+            <use href="#petalMd" fill="url(#peonyPetalG2)" transform="rotate(282) scale(0.9)"/>
+            <!-- center -->
+            <circle r="12" fill="url(#peonyCenterG)"/>
+            <circle r="6.5" fill="#C77E45"/>
+            <circle cx="-2" cy="-2.5" r="2.4" fill="#F7DDBE" opacity="0.7"/>
+          </g>
+          </g>
+   
+          <!-- bloom 2: ranunculus, center, the focal flower — denser ruffled petal rings -->
+          <g transform="translate(190,118)">
+          <g class="bloom-pop" style="animation-delay: 0.4s">
+            <!-- outer ring -->
+            <use href="#petalLg" fill="url(#ranunPetalG1)" transform="rotate(-8) scale(1.35)"/>
+            <use href="#petalLg" fill="url(#ranunPetalG2)" transform="rotate(42) scale(1.45)"/>
+            <use href="#petalLg" fill="url(#ranunPetalG1)" transform="rotate(95) scale(1.3)"/>
+            <use href="#petalLg" fill="url(#ranunPetalG2)" transform="rotate(150) scale(1.4)"/>
+            <use href="#petalLg" fill="url(#ranunPetalG1)" transform="rotate(202) scale(1.32)"/>
+            <use href="#petalLg" fill="url(#ranunPetalG2)" transform="rotate(255) scale(1.42)"/>
+            <use href="#petalLg" fill="url(#ranunPetalG1)" transform="rotate(308) scale(1.33)"/>
+            <!-- overlap shading -->
+            <path d="M0 -3 C11 -14 13 -30 6 -42 C3 -30 -1 -14 0 -3 Z" fill="#A8536A" opacity="0.16" transform="rotate(17) scale(1.3)"/>
+            <path d="M0 -3 C11 -14 13 -30 6 -42 C3 -30 -1 -14 0 -3 Z" fill="#A8536A" opacity="0.16" transform="rotate(122) scale(1.3)"/>
+            <path d="M0 -3 C11 -14 13 -30 6 -42 C3 -30 -1 -14 0 -3 Z" fill="#A8536A" opacity="0.16" transform="rotate(228) scale(1.3)"/>
+            <!-- mid ring -->
+            <use href="#petalMd" fill="url(#ranunPetalG2)" transform="rotate(8) scale(1.15)"/>
+            <use href="#petalMd" fill="url(#ranunPetalG1)" transform="rotate(60) scale(1.05)"/>
+            <use href="#petalMd" fill="url(#ranunPetalG2)" transform="rotate(112) scale(1.18)"/>
+            <use href="#petalMd" fill="url(#ranunPetalG1)" transform="rotate(165) scale(1.08)"/>
+            <use href="#petalMd" fill="url(#ranunPetalG2)" transform="rotate(218) scale(1.15)"/>
+            <use href="#petalMd" fill="url(#ranunPetalG1)" transform="rotate(270) scale(1.1)"/>
+            <use href="#petalMd" fill="url(#ranunPetalG2)" transform="rotate(322) scale(1.13)"/>
+            <!-- inner ring, ruffled and tight -->
+            <use href="#petalSm" fill="url(#ranunPetalG1)" transform="rotate(2) scale(1.05)"/>
+            <use href="#petalSm" fill="url(#ranunPetalG2)" transform="rotate(60) scale(0.95)"/>
+            <use href="#petalSm" fill="url(#ranunPetalG1)" transform="rotate(118) scale(1)"/>
+            <use href="#petalSm" fill="url(#ranunPetalG2)" transform="rotate(176) scale(0.92)"/>
+            <use href="#petalSm" fill="url(#ranunPetalG1)" transform="rotate(234) scale(1.02)"/>
+            <use href="#petalSm" fill="url(#ranunPetalG2)" transform="rotate(292) scale(0.96)"/>
+            <!-- center -->
+            <circle r="9" fill="url(#ranunCenterG)"/>
+            <circle r="4.5" fill="#9A3F52"/>
+            <circle cx="-2.5" cy="-3" r="2.6" fill="#EFAFBD" opacity="0.7"/>
+          </g>
+          </g>
+   
+          <!-- bloom 3: spray rose, right -->
+          <g transform="translate(232,150)">
+          <g class="bloom-pop" style="animation-delay: 0.65s">
+            <use href="#petalMd" fill="url(#rosePetalG1)" transform="rotate(-10) scale(1.05)"/>
+            <use href="#petalMd" fill="url(#rosePetalG2)" transform="rotate(58) scale(1.12)"/>
+            <use href="#petalMd" fill="url(#rosePetalG1)" transform="rotate(122) scale(0.98)"/>
+            <use href="#petalMd" fill="url(#rosePetalG2)" transform="rotate(184) scale(1.08)"/>
+            <use href="#petalMd" fill="url(#rosePetalG1)" transform="rotate(246) scale(1.02)"/>
+            <use href="#petalMd" fill="url(#rosePetalG2)" transform="rotate(308) scale(1.1)"/>
+            <path d="M0 -2 C7 -8 8 -18 4 -26 C2 -18 -1 -8 0 -2 Z" fill="#B97C92" opacity="0.16" transform="rotate(24)"/>
+            <path d="M0 -2 C7 -8 8 -18 4 -26 C2 -18 -1 -8 0 -2 Z" fill="#B97C92" opacity="0.16" transform="rotate(150)"/>
+            <use href="#petalSm" fill="url(#rosePetalG1)" transform="rotate(20) scale(0.95)"/>
+            <use href="#petalSm" fill="url(#rosePetalG2)" transform="rotate(95) scale(0.9)"/>
+            <use href="#petalSm" fill="url(#rosePetalG1)" transform="rotate(170) scale(0.96)"/>
+            <use href="#petalSm" fill="url(#rosePetalG2)" transform="rotate(245) scale(0.88)"/>
+            <use href="#petalSm" fill="url(#rosePetalG1)" transform="rotate(320) scale(0.93)"/>
+            <circle r="8" fill="url(#roseCenterG)"/>
+            <circle r="4" fill="#C76B4A"/>
+          </g>
+          </g>
+   
+          <!-- small filler blooms tucked in -->
+          <g transform="translate(125,178)">
+          <g class="bloom-pop" style="animation-delay: 0.85s">
+            <use href="#petalSm" fill="url(#peonyPetalG1)" transform="rotate(-15) scale(0.7)"/>
+            <use href="#petalSm" fill="url(#peonyPetalG2)" transform="rotate(60) scale(0.78)"/>
+            <use href="#petalSm" fill="url(#peonyPetalG1)" transform="rotate(135) scale(0.68)"/>
+            <use href="#petalSm" fill="url(#peonyPetalG2)" transform="rotate(210) scale(0.75)"/>
+            <use href="#petalSm" fill="url(#peonyPetalG1)" transform="rotate(285) scale(0.7)"/>
+            <circle r="6" fill="#E0AE7E"/>
+            <circle r="3" fill="#D98C56"/>
+          </g>
+          </g>
+          <g transform="translate(258,180)">
+          <g class="bloom-pop" style="animation-delay: 0.95s">
+            <use href="#petalSm" fill="url(#rosePetalG1)" transform="rotate(-10) scale(0.62)"/>
+            <use href="#petalSm" fill="url(#rosePetalG2)" transform="rotate(65) scale(0.7)"/>
+            <use href="#petalSm" fill="url(#rosePetalG1)" transform="rotate(140) scale(0.6)"/>
+            <use href="#petalSm" fill="url(#rosePetalG2)" transform="rotate(215) scale(0.68)"/>
+            <use href="#petalSm" fill="url(#rosePetalG1)" transform="rotate(290) scale(0.63)"/>
+            <circle r="5.5" fill="#D89DB4"/>
+            <circle r="2.8" fill="#C76B4A"/>
+          </g>
+          </g>
+          <g transform="translate(178,98)">
+          <g class="bloom-pop" style="animation-delay: 1.05s">
+            <circle r="10" fill="#F3D6C0"/>
+            <circle r="5" fill="#E0AE7E"/>
+          </g>
+          </g>
+   
+          <!-- baby's breath sprigs -->
+          <circle cx="108" cy="158" r="3.5" fill="#FFFFFF" stroke="#E5DDD0" stroke-width="0.5"/>
+          <circle cx="118" cy="148" r="3" fill="#FFFFFF" stroke="#E5DDD0" stroke-width="0.5"/>
+          <circle cx="272" cy="160" r="3.5" fill="#FFFFFF" stroke="#E5DDD0" stroke-width="0.5"/>
+          <circle cx="262" cy="148" r="3" fill="#FFFFFF" stroke="#E5DDD0" stroke-width="0.5"/>
+          <circle cx="165" cy="78" r="3" fill="#FFFFFF" stroke="#E5DDD0" stroke-width="0.5"/>
+          <circle cx="215" cy="76" r="3" fill="#FFFFFF" stroke="#E5DDD0" stroke-width="0.5"/>
+          <circle cx="190" cy="68" r="3.5" fill="#FFFFFF" stroke="#E5DDD0" stroke-width="0.5"/>
+        </svg>
+   
+        <p class="eyebrow" data-i18n="eyebrow">feliz cumpleaños</p>
+        <h1 class="headline" data-i18n="headline">Para Kotku,<br>la guapa oficial</h1>
+   
+        <p class="body-text" data-i18n="body1">Sé que tener exámenes justo ese día no es el plan más épico del mundo, pero espero que aun así encuentres ratitos para disfrutarlo, que te salga todo bien y que el día tenga más cosas buenas que apuntes.</p>
+        <p class="body-text" data-i18n="body2">De momento yo solo puedo darte estas flores digitales, hechas por un casi ingeniero informático con más cariño que medios. No es un ramo de verdad, pero oye, algo es algo.</p>
+        <p class="body-text" data-i18n="body3">Pásalo genial hoy, guapa.</p>
+   
+        <div class="divider"></div>
+   
+        <p class="signoff" data-i18n="signoff">Feliz cumpleaños, kotku.<br>Que lo disfrutes muchísimo.</p>
+   
+        <div class="counter-row">
+          <span class="counter-pill" data-i18n="counter">3 meses juntos · 1 cumpleaños celebrado</span>
+        </div>
+   
+        <div class="gift-wrap">
+          <p class="gift-label" data-i18n="giftLabel">y todavía hay algo más</p>
+   
+          <div class="gift-box" id="giftBox">
+            <svg viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+              <rect x="20" y="62" width="90" height="58" rx="6" fill="#D9778C"/>
+              <rect x="20" y="62" width="90" height="58" rx="6" fill="none" stroke="#C45F73" stroke-width="1.5"/>
+              <rect x="56" y="62" width="18" height="58" fill="#C45F73"/>
+   
+              <g class="gift-lid">
+                <rect x="14" y="46" width="102" height="20" rx="5" fill="#E08FA0"/>
+                <rect x="14" y="46" width="102" height="20" rx="5" fill="none" stroke="#C45F73" stroke-width="1.5"/>
+                <rect x="56" y="46" width="18" height="20" fill="#C45F73"/>
+                <path d="M65 46 C40 46 40 18 58 22 C70 24 65 40 65 46 Z" fill="#C45F73"/>
+                <path d="M65 46 C90 46 90 18 72 22 C60 24 65 40 65 46 Z" fill="#C45F73"/>
+                <circle cx="65" cy="40" r="7" fill="#A8455A"/>
+              </g>
+            </svg>
+          </div>
+   
+          <div class="voucher" id="voucher">
+            <svg class="voucher-svg" viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="ticketBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FFFDF8"/>
+                  <stop offset="100%" stop-color="#FBF3E6"/>
+                </linearGradient>
+              </defs>
+   
+              <!-- main ticket body with notched edges (die-cut paper look) -->
+              <path d="
+                M14,8
+                H346
+                A8,8 0 0 1 354,16
+                V40
+                A14,14 0 0 0 354,68
+                V132
+                A14,14 0 0 0 354,160
+                V184
+                A8,8 0 0 1 346,192
+                H14
+                A8,8 0 0 1 6,184
+                V160
+                A14,14 0 0 0 6,132
+                V68
+                A14,14 0 0 0 6,40
+                V16
+                A8,8 0 0 1 14,8
+                Z"
+                fill="url(#ticketBg)" stroke="#E3D2B8" stroke-width="1.5"/>
+   
+              <!-- perforation line separating the stub -->
+              <line x1="266" y1="14" x2="266" y2="186" stroke="#D9C3A3" stroke-width="1.5" stroke-dasharray="4,5"/>
+              <circle cx="266" cy="40" r="6" fill="#F1E8DA"/>
+              <circle cx="266" cy="160" r="6" fill="#F1E8DA"/>
+   
+              <!-- small decorative flower, top-left -->
+              <g transform="translate(34,32)">
+                <path d="M0 18 C-1 10 1 5 2 0" stroke="#8FAE7E" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <circle r="9" fill="#E3B7C9"/>
+                <path d="M0 -8 C4 -7 6 -3 5 1 C2 -1 -1 -2 0 -8 Z" fill="#EAC8D6"/>
+                <path d="M0 -8 C-4 -7 -6 -3 -5 1 C-2 -1 1 -2 0 -8 Z" fill="#EAC8D6"/>
+                <circle r="4" fill="#C76B4A"/>
+              </g>
+   
+              <!-- validity stamp, in the stub -->
+              <g transform="translate(309,100) rotate(-10)">
+                <circle r="34" fill="none" stroke="#C76B4A" stroke-width="2"/>
+                <circle r="28" fill="none" stroke="#C76B4A" stroke-width="1"/>
+                <path id="stampArcTop" d="M -22 6 A 22 22 0 0 1 22 6" fill="none"/>
+                <path id="stampArcBottom" d="M 22 -2 A 22 22 0 0 1 -22 -2" fill="none"/>
+                <text class="voucher-stamp-text">
+                  <textPath href="#stampArcTop" startOffset="50%" text-anchor="middle" data-i18n="voucherStampTop">VÁLIDO</textPath>
+                </text>
+                <text class="voucher-stamp-text">
+                  <textPath href="#stampArcBottom" startOffset="50%" text-anchor="middle" data-i18n="voucherStampBottom">SIN CADUCIDAD</textPath>
+                </text>
+              </g>
+            </svg>
+   
+            <div class="voucher-text">
+              <p class="voucher-eyebrow-html" data-i18n="voucherEyebrow">vale de regalo</p>
+              <p class="voucher-title-html" data-i18n="voucherTitle">Una cita sorpresa</p>
+              <p class="voucher-sub-html" data-i18n="voucherSub">Organizada por tu novio. Fecha, lugar y plan: secretos hasta el día. Solo prepárate para pasarlo bien.</p>
+            </div>
+          </div>
+        </div>
+   
+        <div class="lang-toggle">
+          <button class="lang-btn active" id="langEs" type="button">ES</button>
+          <button class="lang-btn" id="langPl" type="button">PL</button>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+   
+  <div class="petal-layer" id="petalLayer"></div>
+
+</body>
+</html>
